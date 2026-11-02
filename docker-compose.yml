@@ -1,0 +1,17 @@
+services:
+  mongo:
+    image: mongo:7
+    volumes: [mongo-data:/data/db]
+  api:
+    build: ./backend
+    environment:
+      MONGO_URL: mongodb://mongo:27017/inclusivenue
+      JWT_SECRET: ${JWT_SECRET:-dev-secret-change-me}
+    depends_on: [mongo]
+    ports: ["4000:4000"]
+  web:
+    build: ./frontend
+    ports: ["8080:80"]
+    depends_on: [api]
+volumes:
+  mongo-data:
