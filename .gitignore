@@ -1,3 +1,13 @@
-node_modules
+node_modules/
+dist/
+coverage/
+uploads/
 .env
-dist
+.env.*
+!.env.example
+*.log
+.DS_Store
+test-results/
+playwright-report/
+e2e/.auth/
+perf/results/*.json
