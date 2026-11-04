@@ -1,0 +1,67 @@
+erDiagram
+  USER ||--o{ EVENT : "organise"
+  USER ||--o{ BOOKING : "réserve"
+  EVENT ||--o{ BOOKING : "contient"
+  CATEGORY ||--o{ EVENT : "classe"
+  USER ||--o{ NOTIFICATION : "reçoit"
+  USER {
+    ObjectId _id
+    string name
+    string email UK
+    string passwordHash "bcrypt, select:false"
+    enum role "user|organizer|admin"
+    enum status "active|suspended"
+    string organizationName
+    object preferences "fontScale, highContrast, reducedMotion, screenReaderMode, dyslexiaFont, hearingMode, preferredFeatures[], emailNotifications"
+    object passwordReset "tokenHash sha256, expiresAt"
+  }
+  EVENT {
+    ObjectId _id
+    string title "index texte"
+    string description
+    ObjectId category FK
+    ObjectId organizer FK
+    date startDate
+    date endDate
+    object venue "name, address, city, location GeoJSON 2dsphere"
+    number price
+    bool isFree
+    int capacity
+    int availableSeats "décrément atomique"
+    object coverImage "url, alt"
+    object accessibility "12 booléens"
+    enum status "draft|pending|published|rejected|archived"
+    object moderation "reason, moderatedBy, dates"
+  }
+  BOOKING {
+    ObjectId _id
+    ObjectId user FK
+    ObjectId event FK
+    int seats
+    enum status "confirmed|cancelled"
+    string reference UK
+    array accessibilityNeeds
+    bool checkedIn
+    date reminderSentAt
+  }
+  CATEGORY {
+    ObjectId _id
+    string name UK
+    string slug UK
+    bool active
+  }
+  NOTIFICATION {
+    ObjectId _id
+    ObjectId user FK
+    enum type
+    string title
+    string message
+    bool read
+    enum emailStatus "none|sent|logged|disabled|failed"
+  }
+  SETTING {
+    string key UK "platform"
+    bool requireModeration
+    int maxSeatsPerBooking
+    int cancellationDeadlineHours
+  }

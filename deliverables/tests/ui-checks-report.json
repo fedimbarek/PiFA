@@ -1,0 +1,304 @@
+{
+  "pages": [
+    {
+      "name": "01-accueil",
+      "url": "/",
+      "issues": [],
+      "textNodesChecked": 129,
+      "title": "InclusiVenue — Événements culturels accessibles",
+      "lang": "fr"
+    },
+    {
+      "name": "02-evenements",
+      "url": "/evenements",
+      "issues": [],
+      "textNodesChecked": 205,
+      "title": "Événements — InclusiVenue",
+      "lang": "fr"
+    },
+    {
+      "name": "03-evenements-filtres-lsf",
+      "url": "/evenements?features=signLanguage,wheelchair",
+      "issues": [],
+      "textNodesChecked": 111,
+      "title": "Événements — InclusiVenue",
+      "lang": "fr"
+    },
+    {
+      "name": "04-detail-evenement",
+      "url": "/evenements/5418b63fc53f0df867cc821c",
+      "issues": [],
+      "textNodesChecked": 77,
+      "title": "Atelier d’initiation à la langue des signes — InclusiVenue",
+      "lang": "fr"
+    },
+    {
+      "name": "05-carte",
+      "url": "/carte",
+      "issues": [],
+      "textNodesChecked": 117,
+      "title": "Carte des lieux — InclusiVenue",
+      "lang": "fr"
+    },
+    {
+      "name": "06-connexion",
+      "url": "/connexion",
+      "issues": [],
+      "textNodesChecked": 43,
+      "title": "Connexion — InclusiVenue",
+      "lang": "fr"
+    },
+    {
+      "name": "07-inscription",
+      "url": "/inscription",
+      "issues": [],
+      "textNodesChecked": 48,
+      "title": "Inscription — InclusiVenue",
+      "lang": "fr"
+    },
+    {
+      "name": "08-a-propos",
+      "url": "/a-propos",
+      "issues": [],
+      "textNodesChecked": 41,
+      "title": "À propos — InclusiVenue",
+      "lang": "fr"
+    },
+    {
+      "name": "09-contact",
+      "url": "/contact",
+      "issues": [],
+      "textNodesChecked": 40,
+      "title": "Contact — InclusiVenue",
+      "lang": "fr"
+    },
+    {
+      "name": "10-declaration-accessibilite",
+      "url": "/accessibilite",
+      "issues": [],
+      "textNodesChecked": 52,
+      "title": "Déclaration d'accessibilité — InclusiVenue",
+      "lang": "fr"
+    },
+    {
+      "name": "11-404",
+      "url": "/nexiste-pas",
+      "issues": [],
+      "textNodesChecked": 34,
+      "title": "Page introuvable — InclusiVenue",
+      "lang": "fr"
+    },
+    {
+      "name": "15-accueil-contraste-eleve-150",
+      "url": "/",
+      "issues": [],
+      "textNodesChecked": 122,
+      "title": "InclusiVenue — Événements culturels accessibles",
+      "lang": "fr"
+    },
+    {
+      "name": "16-zoom-200-evenements",
+      "url": "/evenements",
+      "issues": [],
+      "textNodesChecked": 198,
+      "title": "Événements — InclusiVenue",
+      "lang": "fr"
+    },
+    {
+      "name": "16b-zoom-200-detail",
+      "url": "/evenements/5418b63fc53f0df867cc821c",
+      "issues": [],
+      "textNodesChecked": 70,
+      "title": "Atelier d’initiation à la langue des signes — InclusiVenue",
+      "lang": "fr"
+    },
+    {
+      "name": "17-mobile-accueil",
+      "url": "/",
+      "issues": [],
+      "textNodesChecked": 122,
+      "title": "InclusiVenue — Événements culturels accessibles",
+      "lang": "fr"
+    },
+    {
+      "name": "20-participant-tableau-de-bord",
+      "url": "/mon-espace",
+      "issues": [],
+      "textNodesChecked": 52,
+      "title": "Mon espace — InclusiVenue",
+      "lang": "fr"
+    },
+    {
+      "name": "23-mes-reservations",
+      "url": "/mon-espace/reservations",
+      "issues": [],
+      "textNodesChecked": 73,
+      "title": "Mes réservations — InclusiVenue",
+      "lang": "fr"
+    },
+    {
+      "name": "24-notifications",
+      "url": "/mon-espace/notifications",
+      "issues": [],
+      "textNodesChecked": 57,
+      "title": "Notifications — InclusiVenue",
+      "lang": "fr"
+    },
+    {
+      "name": "25-profil",
+      "url": "/mon-espace/profil",
+      "issues": [],
+      "textNodesChecked": 48,
+      "title": "Mon profil — InclusiVenue",
+      "lang": "fr"
+    },
+    {
+      "name": "26-reglages-accessibilite",
+      "url": "/mon-espace/accessibilite",
+      "issues": [],
+      "textNodesChecked": 67,
+      "title": "Réglages d'accessibilité — InclusiVenue",
+      "lang": "fr"
+    },
+    {
+      "name": "30-organisateur-tableau-de-bord",
+      "url": "/organisateur",
+      "issues": [],
+      "textNodesChecked": 74,
+      "title": "Espace organisateur — InclusiVenue",
+      "lang": "fr"
+    },
+    {
+      "name": "31-mes-evenements",
+      "url": "/organisateur/evenements",
+      "issues": [],
+      "textNodesChecked": 170,
+      "title": "Mes événements — InclusiVenue",
+      "lang": "fr"
+    },
+    {
+      "name": "32-creer-evenement",
+      "url": "/organisateur/evenements/nouveau",
+      "issues": [],
+      "textNodesChecked": 82,
+      "title": "Créer un événement — InclusiVenue",
+      "lang": "fr"
+    },
+    {
+      "name": "34-reservations-evenement",
+      "url": "/organisateur/evenements/e3e5270bc7ab30fda70260f1/reservations",
+      "issues": [],
+      "textNodesChecked": 47,
+      "title": "Réservations — Danse inclusive : performance et atelier — InclusiVenue",
+      "lang": "fr"
+    },
+    {
+      "name": "35-statistiques-organisateur",
+      "url": "/organisateur/statistiques",
+      "issues": [],
+      "textNodesChecked": 124,
+      "title": "Statistiques — InclusiVenue",
+      "lang": "fr"
+    },
+    {
+      "name": "40-admin-tableau-de-bord",
+      "url": "/admin",
+      "issues": [],
+      "textNodesChecked": 71,
+      "title": "Administration — InclusiVenue",
+      "lang": "fr"
+    },
+    {
+      "name": "41-moderation",
+      "url": "/admin/moderation",
+      "issues": [],
+      "textNodesChecked": 65,
+      "title": "Modération — InclusiVenue",
+      "lang": "fr"
+    },
+    {
+      "name": "42-utilisateurs",
+      "url": "/admin/utilisateurs",
+      "issues": [],
+      "textNodesChecked": 82,
+      "title": "Utilisateurs — InclusiVenue",
+      "lang": "fr"
+    },
+    {
+      "name": "43-statistiques-plateforme",
+      "url": "/admin/statistiques",
+      "issues": [],
+      "textNodesChecked": 91,
+      "title": "Statistiques globales — InclusiVenue",
+      "lang": "fr"
+    },
+    {
+      "name": "44-parametres",
+      "url": "/admin/parametres",
+      "issues": [],
+      "textNodesChecked": 86,
+      "title": "Paramètres — InclusiVenue",
+      "lang": "fr"
+    }
+  ],
+  "consoleErrors": [],
+  "flows": [
+    {
+      "flow": "register invalid → error summary focused",
+      "ok": true,
+      "focused": "error-summary"
+    },
+    {
+      "flow": "first Tab = skip link",
+      "ok": true,
+      "firstTab": "Aller au contenu principal"
+    },
+    {
+      "flow": "visitor → /admin redirected to login",
+      "ok": true,
+      "url": "http://localhost:5055/connexion"
+    },
+    {
+      "flow": "dialog: focus inside, trapped, Esc closes, focus restored",
+      "ok": true,
+      "inDialog": true,
+      "stillIn": true,
+      "closed": true,
+      "back": true
+    },
+    {
+      "flow": "visitor prefs persist after reload (localStorage)",
+      "ok": true
+    },
+    {
+      "flow": "participant searches wheelchair event and books it",
+      "ok": true
+    },
+    {
+      "flow": "booking confirmation notification visible",
+      "ok": true
+    },
+    {
+      "flow": "participant cancels a booking",
+      "ok": true,
+      "cancelledTab": "Annulées (1)"
+    },
+    {
+      "flow": "participant → /admin redirected to own space",
+      "ok": true,
+      "url": "http://localhost:5055/mon-espace"
+    },
+    {
+      "flow": "organizer creates event via form and submits it to moderation",
+      "ok": true
+    },
+    {
+      "flow": "admin approves → event publicly listed",
+      "ok": true
+    },
+    {
+      "flow": "organizer receives approval notification",
+      "ok": true
+    }
+  ]
+}

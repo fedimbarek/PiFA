@@ -24,16 +24,16 @@
 :root {
   /* Brand */
   --navy-950: #061428;
-  --navy-900: #0b1f3a; /* 16.1:1 on white */
+  --navy-900: #0b1f3a; /* 16.5:1 on white */
   --navy-800: #13305a;
   --navy-700: #1c3f73;
   --blue-700: #1d4ed8; /* 6.7:1 on white — primary actions & links */
   --blue-800: #1e40af; /* 8.7:1 */
   --blue-100: #dbe6ff;
   --blue-50: #eef3ff;
-  --gold-400: #e3b341; /* decorative / on navy only (8.9:1 on navy-900) */
+  --gold-400: #e3b341; /* decorative / on navy only (8.5:1 on navy-900) */
   --gold-300: #f0cd73;
-  --gold-700: #8a6100; /* 5.6:1 on white — gold text on light backgrounds */
+  --gold-700: #8a6100; /* 5.5:1 on white — gold text on light backgrounds */
   --gold-50: #fdf6e3;
 
   /* Neutrals */

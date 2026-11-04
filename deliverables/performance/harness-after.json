@@ -1,0 +1,49 @@
+{
+ "label": "after",
+ "pages": {
+  "/": {
+   "lcp_ms": 2720,
+   "cls": 0,
+   "inp_proxy_ms": 120,
+   "networkidle_ms": 4161,
+   "js_gzip_kb": 87.1,
+   "css_gzip_kb": 15.7,
+   "img_kb": 83.1,
+   "font_kb": 45.9
+  },
+  "/evenements": {
+   "lcp_ms": 3840,
+   "cls": 0,
+   "inp_proxy_ms": 96,
+   "networkidle_ms": 4619,
+   "js_gzip_kb": 89.7,
+   "css_gzip_kb": 15.7,
+   "img_kb": 110.9,
+   "font_kb": 45.9
+  },
+  "/connexion": {
+   "lcp_ms": 3580,
+   "cls": 0,
+   "inp_proxy_ms": 56,
+   "networkidle_ms": 3962,
+   "js_gzip_kb": 114.7,
+   "css_gzip_kb": 15.7,
+   "img_kb": 0,
+   "font_kb": 45.9
+  }
+ },
+ "api_harness": {
+  "list": {
+   "p50_ms": 2.1,
+   "p95_ms": 10.1
+  },
+  "search": {
+   "p50_ms": 1.2,
+   "p95_ms": 2.1
+  },
+  "map": {
+   "p50_ms": 1.5,
+   "p95_ms": 2.6
+  }
+ }
+}

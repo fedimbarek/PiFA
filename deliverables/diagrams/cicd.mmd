@@ -1,0 +1,11 @@
+flowchart LR
+  DEV["git push / pull request"] --> GH["GitHub Actions — ci.yml"]
+  GH --> B["Job backend<br/>npm install · ESLint<br/>tests unitaires (node:test)<br/>tests d'intégration (supertest + mongodb-memory-server)<br/>couverture lcov"]
+  GH --> F["Job frontend<br/>npm install · ESLint (+jsx-a11y)<br/>tests · vite build"]
+  B --> D
+  F --> D["Job docker<br/>docker compose config<br/>docker compose up --build -d --wait<br/>smoke tests /healthz /api/health"]
+  D --> E["Playwright E2E<br/>parcours · sécurité · axe WCAG 2.1 AA · mobile"]
+  D --> L["Lighthouse CI<br/>perf · a11y · best practices · SEO"]
+  E --> ART["Artefacts : rapports, couverture, traces"]
+  L --> ART
+  TAG["git tag v*"] --> REL["release-images.yml<br/>build & push GHCR"] --> DEP["Déploiement<br/>Render / Railway / VPS + MongoDB Atlas"]

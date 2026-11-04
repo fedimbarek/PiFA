@@ -1,0 +1,22 @@
+flowchart LR
+  subgraph Client["Navigateur (utilisateur, lecteur d'écran, clavier)"]
+    SPA["React 18 + Vite SPA<br/>React Router · React Hook Form + Zod<br/>Contexts: Auth · Préférences a11y · Toasts<br/>Leaflet (carte, chargée à la demande)"]
+  end
+  subgraph Web["Conteneur web — nginx 1.27"]
+    NG["Fichiers statiques (cache 1 an)<br/>gzip · CSP · fallback SPA"]
+  end
+  subgraph API["Conteneur api — Node 22 / Express 4"]
+    MW["Middleware<br/>helmet · CORS · rate-limit · sanitize<br/>CSRF header · JWT (cookie httpOnly / Bearer)<br/>authorize(role) · Zod validate"]
+    R["Routes REST /api/*"] --> C["Controllers"] --> S["Services (règles métier)<br/>auth · events · bookings · notifications<br/>stats · users · platform · mail"]
+    S --> RP["Repositories (Mongoose)"]
+    S --> MAIL["Mail: SMTP ou outbox dev"]
+    J["Job rappels J-1"] --> S
+    SW["Swagger UI /api-docs"]
+    UP["Uploads (sharp → WebP)"]
+  end
+  DB[("MongoDB 7<br/>volume mongo-data")]
+  SPA -- "HTTPS" --> NG
+  NG -- "/api, /api-docs, /uploads" --> MW --> R
+  RP --> DB
+  MAIL -. "SMTP (Brevo, Mailjet…)" .-> EXT["Fournisseur e-mail"]
+  SPA -. "tuiles" .-> OSM["OpenStreetMap"]
