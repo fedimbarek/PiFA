@@ -19,7 +19,8 @@ export function createMailService({ mode, transport, from, emailLogRepo, logger 
       }
     }
     await emailLogRepo.create({ to, subject, text, mode: 'log', status: 'logged' });
-    logger.info?.(`[mail:dev-outbox] to=${to} subject="${subject}" (not sent — MAIL_MODE=log)`);
+    // Printed in full so a local/demo operator can follow links (e.g. password reset) from the logs.
+    logger.info?.(`[mail:dev-outbox] NOT SENT (MAIL_MODE=log) to=${to} subject="${subject}"\n${text}`);
     return 'logged';
   }
   return { send, mode: mode === 'smtp' && transport ? 'smtp' : 'log' };

@@ -43,7 +43,7 @@ export function OrganizerDashboard() {
   if (stats.error) return <OrgSpace title="Tableau de bord"><ErrorState error={stats.error} onRetry={stats.reload} /></OrgSpace>;
   if (stats.loading || events.loading) return <OrgSpace title="Tableau de bord"><Loading /></OrgSpace>;
   const s = stats.data.stats;
-  const upcoming = (events.data?.items || []).filter((e) => e.status === 'published' && new Date(e.startDate) > new Date()).slice(0, 5);
+  const upcoming = (events.data?.items || []).filter((e) => e.status === 'published' && new Date(e.startDate) > new Date()).sort((a, b) => new Date(a.startDate) - new Date(b.startDate)).slice(0, 5);
   const attention = (events.data?.items || []).filter((e) => ['rejected', 'draft', 'pending'].includes(e.status));
   return (
     <OrgSpace title="Tableau de bord" intro="Vue d'ensemble de vos événements et de leur fréquentation (données en temps réel)." actions={<NewEventBtn />}>

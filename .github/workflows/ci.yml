@@ -1,27 +1,87 @@
 name: CI
-on: [push, pull_request]
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   backend:
+    name: Backend — lint, unit & integration tests, coverage
     runs-on: ubuntu-latest
     defaults: { run: { working-directory: backend } }
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
-        with: { node-version: 20 }
-      - run: npm install
-      - run: npm test
+        with: { node-version: 22, cache: npm, cache-dependency-path: backend/package.json }
+      - run: npm install --no-audit --no-fund
+      - run: npm run lint
+      - run: npm run test:unit
+      - name: Integration tests (mongodb-memory-server)
+        run: npm run test:integration
+      - name: Coverage (unit + integration)
+        run: mkdir -p coverage && npm run test:coverage | tee coverage/summary.txt
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with: { name: backend-coverage, path: backend/coverage }
+
   frontend:
+    name: Frontend — lint, tests, build
     runs-on: ubuntu-latest
     defaults: { run: { working-directory: frontend } }
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
-        with: { node-version: 20 }
-      - run: npm install
+        with: { node-version: 22, cache: npm, cache-dependency-path: frontend/package.json }
+      - run: npm install --no-audit --no-fund
+      - run: npm run lint
+      - run: npm test
       - run: npm run build
+      - uses: actions/upload-artifact@v4
+        with: { name: frontend-dist, path: frontend/dist }
+
   docker:
+    name: Docker — validate, build, start, E2E + accessibility
     needs: [backend, frontend]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: docker compose build
+      - name: Validate compose file
+        run: docker compose config -q
+      - name: Build and start the stack
+        run: docker compose up --build -d --wait --wait-timeout 180
+      - name: Smoke test
+        run: |
+          curl -fsS http://localhost:8080/healthz
+          curl -fsS http://localhost:8080/api/health
+          curl -fsS "http://localhost:8080/api/events?limit=1" | head -c 300
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - name: Playwright E2E (journeys, security, axe WCAG 2.1 AA, mobile)
+        working-directory: e2e
+        run: |
+          npm install --no-audit --no-fund
+          npx playwright install --with-deps chromium
+          npx playwright test
+      - name: Lighthouse CI
+        working-directory: frontend
+        continue-on-error: true
+        run: npx --yes @lhci/cli@0.14.0 autorun --config=lighthouserc.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: e2e-and-lighthouse
+          path: |
+            e2e/playwright-report
+            e2e/test-results
+            deliverables/performance/lighthouse
+      - name: Logs on failure
+        if: failure()
+        run: docker compose logs --no-color | tail -300
+      - name: Stop (volumes kept)
+        if: always()
+        run: docker compose down

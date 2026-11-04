@@ -177,6 +177,8 @@ textarea {
 }
 main {
   flex: 1;
+  /* keeps the footer below the fold while lazy routes load (avoids layout shift) */
+  min-height: calc(100vh - 68px);
 }
 main:focus {
   outline: none;
