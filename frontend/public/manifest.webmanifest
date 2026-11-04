@@ -1,0 +1,1 @@
+{ "name": "InclusiVenue", "short_name": "InclusiVenue", "lang": "fr", "start_url": "/", "display": "standalone", "background_color": "#FFFFFF", "theme_color": "#0B1F3A", "icons": [{ "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml" }] }

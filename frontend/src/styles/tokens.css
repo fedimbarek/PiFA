@@ -1,0 +1,184 @@
+/* InclusiVenue design tokens — all text colour pairs checked ≥ 4.5:1 (see docs/ACCESSIBILITY-REPORT.md) */
+@font-face {
+  font-family: 'Atkinson Hyperlegible';
+  src: url('/fonts/AtkinsonHyperlegible-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Atkinson Hyperlegible';
+  src: url('/fonts/AtkinsonHyperlegible-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Atkinson Hyperlegible';
+  src: url('/fonts/AtkinsonHyperlegible-Italic.woff2') format('woff2');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+:root {
+  /* Brand */
+  --navy-950: #061428;
+  --navy-900: #0b1f3a; /* 16.1:1 on white */
+  --navy-800: #13305a;
+  --navy-700: #1c3f73;
+  --blue-700: #1d4ed8; /* 6.7:1 on white — primary actions & links */
+  --blue-800: #1e40af; /* 8.7:1 */
+  --blue-100: #dbe6ff;
+  --blue-50: #eef3ff;
+  --gold-400: #e3b341; /* decorative / on navy only (8.9:1 on navy-900) */
+  --gold-300: #f0cd73;
+  --gold-700: #8a6100; /* 5.6:1 on white — gold text on light backgrounds */
+  --gold-50: #fdf6e3;
+
+  /* Neutrals */
+  --ink-900: #0f172a;
+  --ink-700: #334155; /* 10.4:1 */
+  --ink-600: #475569; /* 7.6:1 — muted text */
+  --ink-500: #64748b; /* 4.8:1 — form borders (≥3:1 non-text) */
+  --line: #d5dce8; /* decorative separators only */
+  --surface: #ffffff;
+  --surface-2: #f5f7fb;
+  --surface-3: #eaeef6;
+
+  /* Feedback */
+  --success-700: #166534; /* 7.1:1 */
+  --success-50: #ecfdf3;
+  --danger-700: #b91c1c; /* 6.5:1 */
+  --danger-50: #fef2f2;
+  --warning-700: #92400e; /* 7.1:1 */
+  --warning-50: #fffbeb;
+
+  /* Semantic */
+  --bg: var(--surface-2);
+  --fg: var(--ink-900);
+  --fg-muted: var(--ink-600);
+  --link: var(--blue-700);
+  --link-hover: var(--blue-800);
+  --primary: var(--blue-700);
+  --primary-hover: var(--blue-800);
+  --on-primary: #ffffff;
+  --card: var(--surface);
+  --card-border: var(--line);
+  --field-border: var(--ink-500);
+  --focus: var(--blue-700);
+  --focus-on-dark: var(--gold-400);
+
+  /* Type scale (rem → follows user font scale) */
+  --font-sans: 'Atkinson Hyperlegible', 'Segoe UI', system-ui, -apple-system, Roboto, Arial, sans-serif;
+  --fs-xs: 0.8125rem;
+  --fs-sm: 0.9375rem;
+  --fs-md: 1rem;
+  --fs-lg: 1.125rem;
+  --fs-xl: 1.375rem;
+  --fs-2xl: 1.75rem;
+  --fs-3xl: clamp(2rem, 1.4rem + 2.4vw, 3rem);
+  --fs-4xl: clamp(2.4rem, 1.6rem + 3.4vw, 3.75rem);
+  --lh: 1.6;
+
+  /* Spacing, radius, shadow */
+  --sp-1: 0.25rem;
+  --sp-2: 0.5rem;
+  --sp-3: 0.75rem;
+  --sp-4: 1rem;
+  --sp-5: 1.5rem;
+  --sp-6: 2rem;
+  --sp-7: 3rem;
+  --sp-8: 4.5rem;
+  --radius-sm: 8px;
+  --radius: 14px;
+  --radius-lg: 22px;
+  --shadow-sm: 0 1px 2px rgb(11 31 58 / 0.06), 0 1px 3px rgb(11 31 58 / 0.08);
+  --shadow: 0 6px 24px -8px rgb(11 31 58 / 0.18), 0 2px 6px rgb(11 31 58 / 0.06);
+  --shadow-lg: 0 24px 60px -20px rgb(11 31 58 / 0.35);
+  --container: 1200px;
+  --touch: 44px; /* minimum target size */
+  --transition: 160ms ease;
+}
+
+/* ---------- User preferences (applied on <html> by PreferencesContext) ---------- */
+html[data-contrast='high'] {
+  --bg: #ffffff;
+  --fg: #000000;
+  --fg-muted: #1a1a1a;
+  --link: #0000ee;
+  --link-hover: #000099;
+  --primary: #000000;
+  --primary-hover: #1a1a1a;
+  --on-primary: #ffff00;
+  --card: #ffffff;
+  --card-border: #000000;
+  --field-border: #000000;
+  --line: #000000;
+  --surface-2: #ffffff;
+  --surface-3: #f0f0f0;
+  --focus: #c00000;
+  --navy-900: #000000;
+  --navy-800: #000000;
+  --blue-50: #ffffff;
+  --blue-100: #ffffcc;
+  --gold-50: #ffffff;
+  --ink-600: #1a1a1a;
+  --ink-700: #000000;
+  --shadow: none;
+  --shadow-sm: none;
+  --shadow-lg: none;
+}
+html[data-contrast='high'] img {
+  filter: contrast(1.15);
+}
+html[data-font='readable'] body {
+  letter-spacing: 0.03em;
+  word-spacing: 0.12em;
+  --lh: 1.85;
+}
+html[data-font='readable'] p,
+html[data-font='readable'] li {
+  max-width: 68ch;
+}
+html[data-underline='true'] a {
+  text-decoration: underline !important;
+  text-underline-offset: 0.2em;
+}
+html[data-motion='reduce'] *,
+html[data-motion='reduce'] *::before,
+html[data-motion='reduce'] *::after {
+  animation-duration: 0.001ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.001ms !important;
+  scroll-behavior: auto !important;
+}
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+/* Screen-reader mode: hide purely decorative visuals, linearise layout, show full text. */
+html[data-sr='true'] .decorative {
+  display: none !important;
+}
+html[data-sr='true'] .card-grid {
+  grid-template-columns: 1fr !important;
+}
+/* Hearing mode: stronger visual signals for notifications. */
+html[data-hearing='true'] .toast {
+  border-width: 3px;
+  box-shadow: 0 0 0 4px var(--gold-400);
+}
+@media (forced-colors: active) {
+  .btn,
+  .badge,
+  .card {
+    border: 1px solid CanvasText;
+  }
+}

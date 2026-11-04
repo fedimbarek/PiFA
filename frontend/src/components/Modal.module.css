@@ -1,0 +1,60 @@
+.backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgb(6 20 40 / 0.62);
+  display: grid;
+  place-items: center;
+  padding: var(--sp-4);
+  z-index: 300;
+  overflow-y: auto;
+}
+.dialog {
+  width: 100%;
+  max-width: 560px;
+  max-height: calc(100vh - 2rem);
+  overflow-y: auto;
+  background: var(--card);
+  color: var(--fg);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--card-border);
+  box-shadow: var(--shadow-lg);
+  padding: var(--sp-5);
+  animation: pop 160ms ease-out;
+}
+.dialog:focus {
+  outline: none;
+}
+.sm {
+  max-width: 460px;
+}
+.lg {
+  max-width: 760px;
+}
+.head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--sp-3);
+  margin-bottom: var(--sp-2);
+}
+.title {
+  font-size: var(--fs-xl);
+  margin: 0;
+  padding-top: 6px;
+}
+.body {
+  margin-top: var(--sp-3);
+}
+.footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: var(--sp-3);
+  margin-top: var(--sp-5);
+}
+@keyframes pop {
+  from {
+    opacity: 0;
+    transform: translateY(8px) scale(0.98);
+  }
+}

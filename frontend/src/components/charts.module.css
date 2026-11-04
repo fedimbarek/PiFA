@@ -1,0 +1,104 @@
+.stat {
+  position: relative;
+  display: grid;
+  gap: 2px;
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius);
+  padding: var(--sp-4) var(--sp-5);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+}
+.stat::before {
+  content: '';
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 4px;
+  background: var(--blue-700);
+}
+.gold::before {
+  background: var(--gold-400);
+}
+.success::before {
+  background: var(--success-700);
+}
+.warning::before {
+  background: var(--warning-700);
+}
+.icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  background: var(--blue-50);
+  color: var(--blue-700);
+  margin-bottom: var(--sp-2);
+}
+.value {
+  font-size: 1.9rem;
+  font-weight: 700;
+  color: var(--navy-900);
+  line-height: 1.1;
+}
+.label {
+  font-weight: 700;
+  color: var(--ink-700);
+  font-size: var(--fs-sm);
+}
+.hint {
+  font-size: var(--fs-xs);
+  color: var(--fg-muted);
+}
+.figure {
+  margin: 0;
+}
+.caption {
+  font-weight: 700;
+  color: var(--navy-900);
+  margin-bottom: var(--sp-3);
+}
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.table th,
+.table td {
+  border: 0;
+  padding: 6px 0;
+}
+.table tr:hover {
+  background: transparent;
+}
+.rowLabel {
+  font-weight: 400;
+  color: var(--ink-700);
+  width: 38%;
+  padding-right: var(--sp-3) !important;
+  font-size: var(--fs-sm);
+}
+.cell {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+}
+.track {
+  flex: 1;
+  height: 14px;
+  background: var(--surface-3);
+  border-radius: 999px;
+  overflow: hidden;
+}
+.bar {
+  display: block;
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--blue-700), var(--navy-700));
+}
+.num {
+  min-width: 56px;
+  text-align: right;
+  font-weight: 700;
+  color: var(--navy-900);
+  font-size: var(--fs-sm);
+}
