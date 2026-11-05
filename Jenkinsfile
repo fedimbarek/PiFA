@@ -58,7 +58,7 @@ pipeline {
             stage('Backend - tests d\'intégration') {
               steps {
                 // mongodb-memory-server télécharge mongod au 1er lancement (accès Internet requis).
-                // UNSTABLE au lieu de FAILURE tant que ces tests n'ont pas été validés ; retirer catchError ensuite.
+                // UNSTABLE au lieu de FAILURE tant que ces tests n'ont pas été validés sur Jenkins ; retirer catchError ensuite.
                 catchError(buildResult: 'UNSTABLE', stageResult: 'UNSTABLE') {
                   dir('backend') {
                     sh 'node --test --test-concurrency=1 --test-reporter=spec --test-reporter-destination=stdout --test-reporter=junit --test-reporter-destination=reports/integration.xml "tests/integration/**/*.test.js"'
@@ -81,10 +81,7 @@ pipeline {
             }
             stage('Frontend - lint') {
               steps {
-                // Le lint échoue aujourd'hui (67 erreurs, dont 62 react/no-unescaped-entities) : UNSTABLE pour ne pas bloquer.
-                catchError(buildResult: 'UNSTABLE', stageResult: 'UNSTABLE') {
-                  dir('frontend') { sh 'npm run lint' }
-                }
+                dir('frontend') { sh 'npm run lint' }
               }
             }
             stage('Frontend - tests + build') {
@@ -165,6 +162,6 @@ pipeline {
       sh 'docker image prune -f || true'
     }
     success { echo "Build #${env.BUILD_NUMBER} OK — application sur http://localhost:8080 (hôte Docker)" }
-    unstable { echo 'Build UNSTABLE : voir les stages en jaune (lint frontend / tests d\'intégration).' }
+    unstable { echo 'Build UNSTABLE : voir les stages en jaune (tests d\'intégration).' }
   }
 }
