@@ -56,7 +56,7 @@ function BookingBox({ event, onBooked }) {
   const offered = ACCESSIBILITY_FEATURES.filter((f) => event.accessibility?.[f.key]);
 
   if (event.status !== 'published') {
-    return <p className="alert alert--info">Cet événement n'est pas ouvert à la réservation ({event.status === 'archived' ? 'archivé' : 'non publié'}).</p>;
+    return <p className="alert alert--info">Cet événement n&rsquo;est pas ouvert à la réservation ({event.status === 'archived' ? 'archivé' : 'non publié'}).</p>;
   }
   if (event.myBooking) {
     return (
@@ -80,7 +80,7 @@ function BookingBox({ event, onBooked }) {
   if (!user) {
     return (
       <div className="stack">
-        <p>Connectez-vous pour réserver vos places et signaler vos besoins à l'organisateur.</p>
+        <p>Connectez-vous pour réserver vos places et signaler vos besoins à l&rsquo;organisateur.</p>
         <Link to="/connexion" state={{ from: location.pathname }} className="btn btn--block">
           Se connecter pour réserver
         </Link>
@@ -137,7 +137,7 @@ function BookingBox({ event, onBooked }) {
       {offered.length > 0 && (
         <fieldset>
           <legend>Services dont vous aurez besoin</legend>
-          <p className="hint">L'organisateur sera prévenu pour préparer votre accueil.</p>
+          <p className="hint">L&rsquo;organisateur sera prévenu pour préparer votre accueil.</p>
           {offered.map((f) => (
             <label key={f.key} className="check">
               <input type="checkbox" checked={needs.includes(f.key)} onChange={() => setNeeds((n) => (n.includes(f.key) ? n.filter((x) => x !== f.key) : [...n, f.key]))} />
@@ -147,7 +147,7 @@ function BookingBox({ event, onBooked }) {
         </fieldset>
       )}
       <div className="field">
-        <label htmlFor="note">Message à l'organisateur (facultatif)</label>
+        <label htmlFor="note">Message à l&rsquo;organisateur (facultatif)</label>
         <textarea id="note" className="textarea" maxLength={500} value={note} onChange={(e) => setNote(e.target.value)} placeholder="ex. je viendrai avec un accompagnateur" />
       </div>
       <button type="submit" className="btn btn--block btn--gold">
@@ -220,7 +220,7 @@ export default function EventDetail() {
         <div className="detail-layout">
           <div className="stack">
             {event.coverImage?.url && (
-              <img src={assetUrl(event.coverImage.url)} alt={event.coverImage.alt || ''} width="1200" height="675" style={{ borderRadius: 'var(--radius-lg)', width: '100%', height: 'auto', boxShadow: 'var(--shadow)' }} fetchpriority="high" />
+              <img src={assetUrl(event.coverImage.url)} alt={event.coverImage.alt || ''} width="1200" height="675" style={{ borderRadius: 'var(--radius-lg)', width: '100%', height: 'auto', boxShadow: 'var(--shadow)' }} fetchPriority="high" />
             )}
             <section className="panel" aria-labelledby="about-title">
               <div className="row-between">
@@ -243,7 +243,7 @@ export default function EventDetail() {
                   ))}
                 </ul>
               ) : (
-                <p>Aucun service d'accessibilité n'a été renseigné par l'organisateur.</p>
+                <p>Aucun service d&rsquo;accessibilité n&rsquo;a été renseigné par l&rsquo;organisateur.</p>
               )}
               {event.venue?.accessInstructions && (
                 <>

@@ -74,8 +74,8 @@ export function DisplaySettings({ open, onClose }) {
         ))}
       </div>
       <p className="small" style={{ marginTop: 'var(--sp-4)' }}>
-        Plus d'options (mode lecteur d'écran, mode sourd/malentendant, besoins par défaut) :{' '}
-        {user ? <Link to="/mon-espace/accessibilite" onClick={onClose}>mes réglages d'accessibilité</Link> : <Link to="/connexion" onClick={onClose}>connectez-vous</Link>}.
+        Plus d&rsquo;options (mode lecteur d&rsquo;écran, mode sourd/malentendant, besoins par défaut) :{' '}
+        {user ? <Link to="/mon-espace/accessibilite" onClick={onClose}>mes réglages d&rsquo;accessibilité</Link> : <Link to="/connexion" onClick={onClose}>connectez-vous</Link>}.
       </p>
     </Modal>
   );
@@ -178,7 +178,7 @@ function Header() {
           <button type="button" className="nav-btn" onClick={() => setDisplayOpen(true)}>
             <Icon name="eye" />
             <span className="hide-mobile">Affichage</span>
-            <span className="sr-only"> : préférences d'affichage</span>
+            <span className="sr-only"> : préférences d&rsquo;affichage</span>
           </button>
           {user ? (
             <>
@@ -236,7 +236,7 @@ function Footer() {
           <nav aria-label="Informations">
             <h2>Informations</h2>
             <ul>
-              <li><Link to="/accessibilite">Déclaration d'accessibilité</Link></li>
+              <li><Link to="/accessibilite">Déclaration d&rsquo;accessibilité</Link></li>
               <li><Link to="/contact">Contact</Link></li>
               <li><Link to="/plan-du-site">Plan du site</Link></li>
             </ul>

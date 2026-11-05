@@ -79,7 +79,7 @@ export default function Home() {
         <div className="container">
           <div className="row-between" style={{ marginBottom: 'var(--sp-5)' }}>
             <div>
-              <span className="eyebrow">À l'affiche</span>
+              <span className="eyebrow">À l&rsquo;affiche</span>
               <h2 id="upcoming-title">Prochains événements</h2>
             </div>
             <Link to="/evenements" className="btn btn--secondary">
@@ -140,7 +140,7 @@ export default function Home() {
             <li>
               <span className={styles.stepNum} aria-hidden="true">2</span>
               <h3>Réservez vos places</h3>
-              <p>Indiquez vos besoins à l'organisateur. Les places sont garanties : aucune surréservation possible.</p>
+              <p>Indiquez vos besoins à l&rsquo;organisateur. Les places sont garanties : aucune surréservation possible.</p>
             </li>
             <li>
               <span className={styles.stepNum} aria-hidden="true">3</span>

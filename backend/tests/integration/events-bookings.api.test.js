@@ -49,7 +49,7 @@ describe('Event API', () => {
 
   test('search, filters, sorting and pagination', async () => {
     await h.publishedEvent({ title: 'Concert gratuit signé', accessibility: { signLanguage: true }, price: 0 });
-    await h.publishedEvent({ title: 'Exposition payante', accessibility: { wheelchair: true, audioDescription: true }, price: 15, venue: { name: 'Musée', address: 'x', city: 'Sousse' } });
+    await h.publishedEvent({ title: 'Exposition payante', accessibility: { wheelchair: true, audioDescription: true }, price: 15, venue: { name: 'Musée', address: '2 avenue Habib Bourguiba', city: 'Sousse' } });
     const all = await h.api.get('/api/events').query({ limit: 1 });
     assert.equal(all.status, 200);
     assert.equal(all.body.items.length, 1);

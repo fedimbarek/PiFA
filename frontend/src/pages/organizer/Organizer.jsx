@@ -340,7 +340,7 @@ export function EventForm() {
           </div>
           <fieldset>
             <legend>Coordonnées GPS (facultatif, pour la carte)</legend>
-            <p className="hint">Exemple pour Tunis centre : latitude 36.8 / longitude 10.18. Laissez vide pour ne pas afficher l'événement sur la carte.</p>
+            <p className="hint">Exemple pour Tunis centre : latitude 36.8 / longitude 10.18. Laissez vide pour ne pas afficher l&rsquo;événement sur la carte.</p>
             <div className="form-grid">
               <TextField id="f-latitude" label="Latitude" inputMode="decimal" error={errors.latitude?.message} {...register('latitude', { setValueAs: (v) => (v === '' || v === null ? undefined : Number(String(v).replace(',', '.'))) })} />
               <TextField id="f-longitude" label="Longitude" inputMode="decimal" error={errors.longitude?.message} {...register('longitude', { setValueAs: (v) => (v === '' || v === null ? undefined : Number(String(v).replace(',', '.'))) })} />
@@ -374,10 +374,10 @@ export function EventForm() {
 
         <section className="panel form" aria-labelledby="s-img">
           <h2 id="s-img" style={{ fontSize: 'var(--fs-xl)' }}>Image de couverture</h2>
-          {ev?.coverImage?.url && <img src={assetUrl(ev.coverImage.url)} alt={`Image actuelle : ${ev.coverImage.alt || 'sans description'}`} style={{ maxWidth: 320, borderRadius: 'var(--radius)' }} />}
+          {ev?.coverImage?.url && <img src={assetUrl(ev.coverImage.url)} alt={`Couverture actuelle : ${ev.coverImage.alt || 'sans description'}`} style={{ maxWidth: 320, borderRadius: 'var(--radius)' }} />}
           <div className="field">
             <label htmlFor="f-image">{ev?.coverImage?.url ? "Remplacer l'image" : 'Ajouter une image'} (facultatif)</label>
-            <span id="f-image-hint" className="hint">JPEG, PNG ou WebP, 2 Mo maximum. L'image sera redimensionnée et compressée.</span>
+            <span id="f-image-hint" className="hint">JPEG, PNG ou WebP, 2 Mo maximum. L&rsquo;image sera redimensionnée et compressée.</span>
             <input ref={fileRef} id="f-image" type="file" accept="image/jpeg,image/png,image/webp" onChange={onFile} aria-describedby={`f-image-hint${imageError ? ' f-image-err' : ''}`} aria-invalid={imageError ? 'true' : undefined} className="input" />
             {imageError && <span id="f-image-err" className="field-error"><Icon name="alert" size={18} /> {imageError}</span>}
           </div>
@@ -435,7 +435,7 @@ export function Reservations() {
     const rows = [['Référence', 'Nom', 'E-mail', 'Places', 'Statut', 'Présent', 'Besoins', 'Message']];
     for (const b of data.bookings) rows.push([b.reference, b.user?.name, b.user?.email, b.seats, b.status, b.checkedIn ? 'oui' : 'non', (b.accessibilityNeeds || []).map((k) => FEATURE_LABEL[k]).join(' / '), b.note]);
     const csv = rows.map((r) => r.map((c) => `"${String(c ?? '').replace(/"/g, '""')}"`).join(';')).join('\n');
-    const url = URL.createObjectURL(new Blob([`﻿${csv}`], { type: 'text/csv;charset=utf-8' }));
+    const url = URL.createObjectURL(new Blob([`\uFEFF${csv}`], { type: 'text/csv;charset=utf-8' }));
     const a = document.createElement('a');
     a.href = url;
     a.download = `reservations-${id}.csv`;
@@ -479,7 +479,7 @@ export function Reservations() {
       {shown.length ? (
         <div className="table-wrap">
           <table>
-            <caption className="sr-only">Réservations de l'événement</caption>
+            <caption className="sr-only">Réservations de l&rsquo;événement</caption>
             <thead>
               <tr>
                 <th scope="col">Participant</th>

@@ -129,7 +129,7 @@ export default function Events() {
               ))}
             </fieldset>
             <fieldset>
-              <legend>Services d'accessibilité requis</legend>
+              <legend>Services d&rsquo;accessibilité requis</legend>
               {prefs.preferredFeatures?.length > 0 && (
                 <button type="button" className="btn btn--ghost btn--sm" onClick={() => setForm({ ...form, features: prefs.preferredFeatures })}>
                   Utiliser mes besoins enregistrés
@@ -213,7 +213,7 @@ export default function Events() {
                 </button>
               }
             >
-              Essayez d'élargir les dates, de retirer un service d'accessibilité ou de changer de ville.
+              Essayez d&rsquo;élargir les dates, de retirer un service d&rsquo;accessibilité ou de changer de ville.
             </EmptyState>
           )}
         </section>

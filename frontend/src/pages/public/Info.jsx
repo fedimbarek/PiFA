@@ -27,15 +27,15 @@ export function About() {
         </p>
         <h2>Ce que nous proposons</h2>
         <ul>
-          <li>Une recherche par service d'accessibilité : langue des signes, boucle magnétique, audiodescription, sous-titrage, accès fauteuil, transport adapté, espace calme, documents FALC ou braille.</li>
-          <li>La réservation de places avec signalement des besoins à l'organisateur.</li>
-          <li>Des préférences d'affichage enregistrées sur votre compte : taille du texte, contraste élevé, réduction des animations, lecture facilitée.</li>
-          <li>Une carte interactive accessible des lieux, toujours accompagnée d'une liste textuelle.</li>
-          <li>L'ajout de vos réservations à votre agenda (export iCal) et des rappels la veille.</li>
+          <li>Une recherche par service d&rsquo;accessibilité : langue des signes, boucle magnétique, audiodescription, sous-titrage, accès fauteuil, transport adapté, espace calme, documents FALC ou braille.</li>
+          <li>La réservation de places avec signalement des besoins à l&rsquo;organisateur.</li>
+          <li>Des préférences d&rsquo;affichage enregistrées sur votre compte : taille du texte, contraste élevé, réduction des animations, lecture facilitée.</li>
+          <li>Une carte interactive accessible des lieux, toujours accompagnée d&rsquo;une liste textuelle.</li>
+          <li>L&rsquo;ajout de vos réservations à votre agenda (export iCal) et des rappels la veille.</li>
         </ul>
         <h2>Pour les organisateurs</h2>
         <p>
-          Les associations publient leurs événements, gèrent leurs jauges et suivent la fréquentation. Chaque publication est relue par l'équipe de modération pour garantir la qualité des informations d'accessibilité.
+          Les associations publient leurs événements, gèrent leurs jauges et suivent la fréquentation. Chaque publication est relue par l&rsquo;équipe de modération pour garantir la qualité des informations d&rsquo;accessibilité.
         </p>
         <p>
           <Link to="/inscription?role=organizer" className="btn">Devenir organisateur</Link>
@@ -88,9 +88,9 @@ export function Contact() {
             <p>Nous répondons sous 2 jours ouvrés. Si vous ne pouvez pas utiliser le formulaire, vous pouvez aussi demander à un proche de nous écrire en votre nom.</p>
           </div>
           <div className="card">
-            <h2 style={{ fontSize: 'var(--fs-xl)' }}>Signaler un défaut d'accessibilité</h2>
-            <p>Un contenu ou une fonctionnalité ne vous est pas accessible ? Décrivez la page et le problème : nous vous fournirons l'information par un autre moyen et corrigerons le défaut.</p>
-            <Link to="/accessibilite">Déclaration d'accessibilité</Link>
+            <h2 style={{ fontSize: 'var(--fs-xl)' }}>Signaler un défaut d&rsquo;accessibilité</h2>
+            <p>Un contenu ou une fonctionnalité ne vous est pas accessible ? Décrivez la page et le problème : nous vous fournirons l&rsquo;information par un autre moyen et corrigerons le défaut.</p>
+            <Link to="/accessibilite">Déclaration d&rsquo;accessibilité</Link>
           </div>
         </div>
       </div>
@@ -105,34 +105,34 @@ export function AccessibilityStatement() {
       <PageHeader title="Déclaration d'accessibilité" eyebrow="Engagement" crumbs={[{ label: 'Accueil', to: '/' }, { label: 'Accessibilité' }]} />
       <div className="container prose">
         <p>
-          InclusiVenue s'engage à rendre son service accessible conformément aux Règles pour l'accessibilité des contenus Web (WCAG) 2.1 niveau AA, en s'appuyant sur le référentiel RGAA.
+          InclusiVenue s&rsquo;engage à rendre son service accessible conformément aux Règles pour l&rsquo;accessibilité des contenus Web (WCAG) 2.1 niveau AA, en s&rsquo;appuyant sur le référentiel RGAA.
         </p>
         <h2>État de conformité</h2>
         <p>
-          Le site est <strong>partiellement conforme</strong> aux WCAG 2.1 AA. Cette déclaration s'appuie sur des tests automatisés et manuels menés par l'équipe projet ; aucun audit indépendant n'a encore été réalisé. Le détail des tests figure dans le rapport d'audit du projet.
+          Le site est <strong>partiellement conforme</strong> aux WCAG 2.1 AA. Cette déclaration s&rsquo;appuie sur des tests automatisés et manuels menés par l&rsquo;équipe projet ; aucun audit indépendant n&rsquo;a encore été réalisé. Le détail des tests figure dans le rapport d&rsquo;audit du projet.
         </p>
         <h2>Ce qui a été mis en œuvre</h2>
         <ul>
-          <li>Navigation complète au clavier, lien d'évitement vers le contenu, indicateurs de focus visibles.</li>
+          <li>Navigation complète au clavier, lien d&rsquo;évitement vers le contenu, indicateurs de focus visibles.</li>
           <li>Structure sémantique (en-tête, navigation, contenu principal, pied de page) et hiérarchie de titres cohérente.</li>
-          <li>Formulaires avec étiquettes, aide et messages d'erreur associés et annoncés, récapitulatif des erreurs.</li>
-          <li>Contrastes de texte d'au moins 4,5:1, mode contraste élevé, texte agrandissable jusqu'à 200 %.</li>
-          <li>Réduction des animations, lecture facilitée, mode lecteur d'écran et mode sourd/malentendant.</li>
+          <li>Formulaires avec étiquettes, aide et messages d&rsquo;erreur associés et annoncés, récapitulatif des erreurs.</li>
+          <li>Contrastes de texte d&rsquo;au moins 4,5:1, mode contraste élevé, texte agrandissable jusqu&rsquo;à 200 %.</li>
+          <li>Réduction des animations, lecture facilitée, mode lecteur d&rsquo;écran et mode sourd/malentendant.</li>
           <li>Fenêtres de dialogue accessibles (focus piégé, fermeture par Échap), notifications annoncées.</li>
-          <li>Carte interactive accompagnée d'une liste textuelle équivalente ; lecture vocale des descriptions.</li>
+          <li>Carte interactive accompagnée d&rsquo;une liste textuelle équivalente ; lecture vocale des descriptions.</li>
         </ul>
         <h2>Limites connues</h2>
         <ul>
-          <li>Les fonds de carte OpenStreetMap ne disposent pas d'alternative textuelle détaillée : utilisez la liste des lieux.</li>
+          <li>Les fonds de carte OpenStreetMap ne disposent pas d&rsquo;alternative textuelle détaillée : utilisez la liste des lieux.</li>
           <li>Les textes alternatifs des images dépendent des organisateurs ; ils sont relus lors de la modération.</li>
-          <li>Les tests avec lecteurs d'écran (NVDA, VoiceOver) doivent être complétés par des utilisateurs réels.</li>
+          <li>Les tests avec lecteurs d&rsquo;écran (NVDA, VoiceOver) doivent être complétés par des utilisateurs réels.</li>
         </ul>
-        <h2>Retour d'information et contact</h2>
+        <h2>Retour d&rsquo;information et contact</h2>
         <p>
           Si vous ne pouvez pas accéder à un contenu ou à un service, <Link to="/contact">contactez-nous</Link> : nous vous orienterons vers une alternative accessible.
         </p>
         <h2>Voies de recours</h2>
-        <p>Si vous n'obtenez pas de réponse satisfaisante, vous pouvez saisir les instances compétentes en matière de droits des personnes handicapées.</p>
+        <p>Si vous n&rsquo;obtenez pas de réponse satisfaisante, vous pouvez saisir les instances compétentes en matière de droits des personnes handicapées.</p>
       </div>
     </>
   );
@@ -222,9 +222,9 @@ export function NotFound() {
     <div className="container section center">
       <span className="eyebrow">Erreur 404</span>
       <h1>Page introuvable</h1>
-      <p className="muted">La page demandée n'existe pas ou a été déplacée.</p>
+      <p className="muted">La page demandée n&rsquo;existe pas ou a été déplacée.</p>
       <div className="row" style={{ justifyContent: 'center' }}>
-        <Link to="/" className="btn">Retour à l'accueil</Link>
+        <Link to="/" className="btn">Retour à l&rsquo;accueil</Link>
         <Link to="/evenements" className="btn btn--secondary">Voir les événements</Link>
       </div>
     </div>

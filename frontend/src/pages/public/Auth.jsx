@@ -134,7 +134,7 @@ export function Register() {
             <input type="radio" value="user" {...register('role')} /> <span>Découvrir et réserver des événements <span className="hint" style={{ display: 'block' }}>Compte participant</span></span>
           </label>
           <label className="check">
-            <input type="radio" value="organizer" {...register('role')} /> <span>Publier les événements de mon association <span className="hint" style={{ display: 'block' }}>Compte organisateur — les événements sont validés par l'équipe avant publication</span></span>
+            <input type="radio" value="organizer" {...register('role')} /> <span>Publier les événements de mon association <span className="hint" style={{ display: 'block' }}>Compte organisateur — les événements sont validés par l&rsquo;équipe avant publication</span></span>
           </label>
         </fieldset>
         <TextField id="f-name" label="Nom complet" autoComplete="name" required error={errors.name?.message} {...register('name')} />
@@ -142,7 +142,7 @@ export function Register() {
         <TextField id="f-email" label="Adresse e-mail" type="email" autoComplete="email" required error={errors.email?.message} {...register('email')} />
         <PasswordField id="f-password" registration={register('password')} error={errors.password?.message} autoComplete="new-password" hint="8 caractères minimum, avec une majuscule, une minuscule et un chiffre." />
         <TextField id="f-confirm" label="Confirmer le mot de passe" type="password" autoComplete="new-password" required error={errors.confirm?.message} {...register('confirm')} />
-        <Checkbox id="f-acceptTerms" label={<>J'accepte les conditions d'utilisation et la <Link to="/accessibilite">politique d'accessibilité</Link>.</>} error={errors.acceptTerms?.message} {...register('acceptTerms')} />
+        <Checkbox id="f-acceptTerms" label={<>J&rsquo;accepte les conditions d&rsquo;utilisation et la <Link to="/accessibilite">politique d&rsquo;accessibilité</Link>.</>} error={errors.acceptTerms?.message} {...register('acceptTerms')} />
         <button type="submit" className="btn btn--block" disabled={isSubmitting}>
           {isSubmitting ? 'Création du compte…' : 'Créer mon compte'}
         </button>

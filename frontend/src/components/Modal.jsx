@@ -59,7 +59,7 @@ export function Modal({ open, onClose, title, description, children, footer, siz
   };
 
   return createPortal(
-    <div className={styles.backdrop} onMouseDown={(e) => e.target === e.currentTarget && onClose()} role="presentation">
+    <div className={styles.backdrop} onMouseDown={(e) => e.target === e.currentTarget && onClose()} onKeyDown={onKeyDown} role="presentation">
       <div
         ref={ref}
         className={`${styles.dialog} ${styles[size] || ''}`}
@@ -68,7 +68,6 @@ export function Modal({ open, onClose, title, description, children, footer, siz
         aria-labelledby={titleId}
         aria-describedby={description ? descId : undefined}
         tabIndex={-1}
-        onKeyDown={onKeyDown}
       >
         <div className={styles.head}>
           <h2 id={titleId} className={styles.title}>

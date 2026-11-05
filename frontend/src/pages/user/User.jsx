@@ -83,7 +83,7 @@ export function UserDashboard() {
             <div className="alert alert--info" style={{ marginTop: 'var(--sp-5)' }}>
               <Icon name="info" />
               <p style={{ margin: 0 }}>
-                Indiquez vos besoins d'accessibilité pour qu'ils soient pré-remplis lors de vos réservations : <Link to="/mon-espace/accessibilite">configurer mes préférences</Link>.
+                Indiquez vos besoins d&rsquo;accessibilité pour qu&rsquo;ils soient pré-remplis lors de vos réservations : <Link to="/mon-espace/accessibilite">configurer mes préférences</Link>.
               </p>
             </div>
           )}

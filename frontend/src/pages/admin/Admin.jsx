@@ -185,8 +185,8 @@ export function Moderation() {
         )}>
         {preview && (
           <div className="stack">
-            {preview.coverImage?.url ? <img src={assetUrl(preview.coverImage.url)} alt={preview.coverImage.alt || ''} style={{ borderRadius: 'var(--radius)' }} /> : <p className="alert alert--warning">Pas d'image de couverture.</p>}
-            {preview.coverImage?.url && !preview.coverImage.alt && <p className="alert alert--warning">L'image n'a pas de texte alternatif.</p>}
+            {preview.coverImage?.url ? <img src={assetUrl(preview.coverImage.url)} alt={preview.coverImage.alt || ''} style={{ borderRadius: 'var(--radius)' }} /> : <p className="alert alert--warning">Pas d&rsquo;image de couverture.</p>}
+            {preview.coverImage?.url && !preview.coverImage.alt && <p className="alert alert--warning">L&rsquo;image n&rsquo;a pas de texte alternatif.</p>}
             <dl className="dl">
               <dt>Organisateur</dt><dd>{preview.organizer?.organizationName} ({preview.organizer?.email})</dd>
               <dt>Date</dt><dd>{formatShort(preview.startDate)} → {formatShort(preview.endDate)}</dd>
@@ -355,7 +355,7 @@ export function AdminStats() {
           <BarChart title="Places réservées par catégorie" data={s.reservationsByCategory.map((r) => ({ label: r.category, value: r.seats }))} />
         </section>
         <section className="panel" aria-labelledby="cov-title">
-          <h2 id="cov-title" style={{ fontSize: 'var(--fs-xl)' }}>Couverture des services d'accessibilité</h2>
+          <h2 id="cov-title" style={{ fontSize: 'var(--fs-xl)' }}>Couverture des services d&rsquo;accessibilité</h2>
           <BarChart title="Part des événements publiés proposant chaque service" data={s.accessibilityCoverage.map((r) => ({ label: r.label, value: r.rate }))} format={percent} max={100} />
         </section>
       </div>
@@ -440,7 +440,7 @@ export function AdminSettings() {
           <form className="panel form" onSubmit={saveSettings} aria-labelledby="set-title">
             <h2 id="set-title" style={{ fontSize: 'var(--fs-xl)' }}>Règles</h2>
             <label className="check"><input type="checkbox" checked={draft.requireModeration} onChange={(e) => setDraft({ ...draft, requireModeration: e.target.checked })} /> <span>Modération obligatoire avant publication<span className="hint" style={{ display: 'block' }}>Désactivé : les événements des organisateurs sont publiés directement.</span></span></label>
-            <label className="check"><input type="checkbox" checked={draft.allowOrganizerSignup} onChange={(e) => setDraft({ ...draft, allowOrganizerSignup: e.target.checked })} /> Autoriser l'inscription de nouveaux organisateurs</label>
+            <label className="check"><input type="checkbox" checked={draft.allowOrganizerSignup} onChange={(e) => setDraft({ ...draft, allowOrganizerSignup: e.target.checked })} /> Autoriser l&rsquo;inscription de nouveaux organisateurs</label>
             <div className="form-grid">
               <TextField id="s-max" type="number" min={1} max={10} label="Places maximum par réservation" value={draft.maxSeatsPerBooking} onChange={(e) => setDraft({ ...draft, maxSeatsPerBooking: e.target.value })} />
               <TextField id="s-deadline" type="number" min={0} max={168} label="Délai d'annulation (heures avant l'événement)" value={draft.cancellationDeadlineHours} onChange={(e) => setDraft({ ...draft, cancellationDeadlineHours: e.target.value })} />

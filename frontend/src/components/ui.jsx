@@ -154,7 +154,7 @@ export function StatusBadge({ status }) {
 
 export function AccessibilityBadges({ accessibility = {}, max, size = 16 }) {
   const list = ACCESSIBILITY_FEATURES.filter((f) => accessibility[f.key]);
-  if (!list.length) return <p className="small muted">Aucun service d'accessibilité renseigné.</p>;
+  if (!list.length) return <p className="small muted">Aucun service d&rsquo;accessibilité renseigné.</p>;
   const shown = max ? list.slice(0, max) : list;
   return (
     <ul className="badge-list" aria-label="Services d'accessibilité">

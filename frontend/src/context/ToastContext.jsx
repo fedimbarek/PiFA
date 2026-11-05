@@ -46,6 +46,7 @@ export function ToastProvider({ children }) {
     list.map((t) => (
       <div
         key={t.id}
+        role="presentation"
         className={`toast toast--${t.type}`}
         onMouseEnter={() => clearTimeout(timers.current[t.id])}
         onMouseLeave={() => schedule(t.id, 4000)}

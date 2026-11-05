@@ -91,7 +91,7 @@ export function MapView({ events, selectedId, onSelect, height = 460, label = 'C
       {status === 'loading' && <p className="small muted" role="status">Chargement de la carte…</p>}
       {status === 'error' && (
         <p className="alert alert--warning" role="status" style={{ marginTop: 'var(--sp-3)' }}>
-          La carte interactive n'a pas pu être chargée. Tous les lieux restent disponibles dans la liste ci-dessous.
+          La carte interactive n&rsquo;a pas pu être chargée. Tous les lieux restent disponibles dans la liste ci-dessous.
         </p>
       )}
     </div>
