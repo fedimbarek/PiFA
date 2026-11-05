@@ -20,7 +20,7 @@ export async function seed({ reset = false, uploadDir = process.env.UPLOAD_DIR |
   const passwordHash = await bcrypt.hash(DEMO_PASSWORD, 10);
   const mk = (name, email, role, extra = {}) => ({ name, email, role, passwordHash, ...extra });
   const [admin, orga, orga2, user, user2, user3] = await User.insertMany([
-    mk('Sana Administratrice', 'admin@inclusivenue.tn', 'admin'),
+    mk('farah Administratrice', 'admin@inclusivenue.tn', 'admin'),
     mk('Karim Mansour', 'orga@inclusivenue.tn', 'organizer', { organizationName: 'Association Culture Pour Tous', city: 'Tunis' }),
     mk('Leila Trabelsi', 'orga2@inclusivenue.tn', 'organizer', { organizationName: 'Collectif Arts & Signes', city: 'Sousse' }),
     mk('Yasmine Ben Ali', 'user@inclusivenue.tn', 'user', { city: 'Tunis', preferences: { fontScale: 112, preferredFeatures: ['wheelchair'], emailNotifications: true } }),
